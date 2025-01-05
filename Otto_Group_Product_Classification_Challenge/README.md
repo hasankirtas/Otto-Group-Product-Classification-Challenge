@@ -18,8 +18,8 @@ This project focuses on building a robust machine learning model to classify pro
 
 #### **1. Data Loading and Preprocessing**
 - **Dataset**: The raw data was loaded from `../data/raw/train.csv`.
-- **Target Variable**: The target class column was identified and encoded.
-- **Preprocessing**: Missing values and outliers were handled to ensure clean data.
+- **Target Variable**: The target variable was addressed separately for each class. A binary classification approach was applied where each class was defined as "class x," and all other classes were treated as "not class x."
+- **Preprocessing**: Since no missing values were found in the dataset, no imputation was necessary. However, the data was processed individually for each class, with specific attention given to each class separately.
 - **Train-Test Split**: Data was split into 80% training and 20% testing using a random state for reproducibility.
 
 #### **2. Feature Selection**
@@ -32,9 +32,8 @@ This project focuses on building a robust machine learning model to classify pro
 
 #### **4. Model Development**
 - **Base Models**:
-  - Logistic Regression
-  - Decision Tree
   - Random Forest
+  - XGBoostClassifier
 - **Ensemble Model**:
   - Developed a custom ensemble model combining predictions from multiple classifiers.
   - Implemented a `ClassFinalClassifier` to unify predictions.
